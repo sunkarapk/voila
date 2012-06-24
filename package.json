@@ -1,0 +1,43 @@
+{
+  "name": "voila",
+  "version": "0.1.0",
+  "author": "scotty.io",
+  "description": "best asset manager one can get in nodejs",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/scottyio/voila.git"
+  },
+  "keywords": [
+    "assets",
+    "pipeline",
+    "cdn",
+    "compile",
+    "stylus",
+    "coffee",
+    "less",
+    "fast"
+  ],
+  "homepage": "http://github.com/scottyio/voila",
+  "contributors": [
+    {
+      "name": "Pavan Kumar Sunkara",
+      "email": "pavan.sss1991@gmail.com"
+    }
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 0.6"
+  },
+  "bugs": {
+    "url": "https://github.com/scottyio/voila/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/scottyio/voila/raw/master/LICENSE"
+    }
+  ]
+}
