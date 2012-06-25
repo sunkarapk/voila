@@ -20,10 +20,10 @@ cli.addArgument(['-d', '--dst'], {
   metavar: 'DST',
 });
 
-cli.addArgument(['filenames'], {
+cli.addArgument(['files'], {
   help: 'File(s) to process',
   metavar: 'FILE',
-  nargs: '+'
+  nargs: '*'
 });
 
 cli = cli.parseArgs();
@@ -36,8 +36,13 @@ if (cli.dst) {
   cli.dst = path.join(process.cwd(), cli.dst);
 }
 
+if (cli.files && cli.files.length == 0) {
+  cli.files = null;
+}
+
 voila(process.cwd(), {
   src: cli.src,
   dst: cli.dst,
-  cli: cli.filenames
+  files: cli.files,
+  cli: true
 });
