@@ -28,7 +28,9 @@
   ],
   "dependencies": {
     "argparse": "0.1.x",
-    "mincer": "0.2.0"
+    "clean-css": "0.4.x",
+    "mincer": "0.2.0",
+    "uglify-js": "1.2.x"
   },
   "devDependencies": {
   },
