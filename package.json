@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "author": "scotty.io",
   "description": "best asset manager one can get in nodejs",
+  "main": "./lib/voila.js",
+  "bin": "./bin/voila",
   "repository": {
     "type": "git",
     "url": "git://github.com/scottyio/voila.git"
@@ -25,6 +27,8 @@
     }
   ],
   "dependencies": {
+    "argparse": "0.1.x",
+    "mincer": "0.2.0"
   },
   "devDependencies": {
   },

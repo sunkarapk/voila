@@ -1,0 +1,43 @@
+#!/usr/bin/env node
+
+var path = require('path')
+  , ArgParse = require('argparse').ArgumentParser
+  , voila = require('../lib/voila');
+
+var cli = new ArgParse({
+  prog: 'voila',
+  version: require('../package.json').version,
+  addHelp: true
+});
+
+cli.addArgument(['-s', '--src'], {
+  help: 'Source folder for assets',
+  metavar: 'SRC'
+});
+
+cli.addArgument(['-d', '--dst'], {
+  help: 'Destination folder for assets',
+  metavar: 'DST',
+});
+
+cli.addArgument(['filenames'], {
+  help: 'File(s) to process',
+  metavar: 'FILE',
+  nargs: '+'
+});
+
+cli = cli.parseArgs();
+
+if (cli.src) {
+  cli.src = path.join(process.cwd(), cli.src);
+}
+
+if (cli.dst) {
+  cli.dst = path.join(process.cwd(), cli.dst);
+}
+
+voila(process.cwd(), {
+  src: cli.src,
+  dst: cli.dst,
+  cli: cli.filenames
+});
