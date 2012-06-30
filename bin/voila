@@ -17,7 +17,12 @@ cli.addArgument(['-s', '--src'], {
 
 cli.addArgument(['-d', '--dst'], {
   help: 'Destination folder for assets',
-  metavar: 'DST',
+  metavar: 'DST'
+});
+
+cli.addArgument(['-p', '--path'], {
+  help: 'Prefix path for serving assets',
+  metavar: 'PATH'
 });
 
 cli.addArgument(['files'], {
@@ -43,6 +48,7 @@ if (cli.files && cli.files.length == 0) {
 voila(process.cwd(), {
   src: cli.src,
   dst: cli.dst,
+  serve: cli.path,
   files: cli.files,
   cli: true
 });
