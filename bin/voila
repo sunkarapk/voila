@@ -25,6 +25,11 @@ cli.addArgument(['-p', '--path'], {
   metavar: 'PATH'
 });
 
+cli.addArgument(['-b', '--bare'], {
+  help: 'Compile coffee in bare mode',
+  action: 'storeTrue'
+});
+
 cli.addArgument(['files'], {
   help: 'File(s) to process',
   metavar: 'FILE',
@@ -50,5 +55,6 @@ voila(process.cwd(), {
   dst: cli.dst,
   serve: cli.path,
   files: cli.files,
+  bare: cli.bare,
   cli: true
 });
